@@ -4,8 +4,8 @@
 export const site = {
   name: 'Benzo',
   tagline: 'Digital products, software and technical solutions',
-  url: process.env.SITE_URL || 'https://benzo.example', // PLACEHOLDER – your real domain, no trailing slash
-  email: 'hello@benzo.example', // PLACEHOLDER
+  url: process.env.SITE_URL || 'https://promotion.benzo.co.in', // no trailing slash
+  email: 'yogeshwarnd.dev@gmail.com', // PLACEHOLDER
   phone: '+91 75693 63309',
   whatsapp: '917569363309', // digits only, with country code
   hours: 'Monday – Saturday, 9:30 AM – 6:30 PM IST', // PLACEHOLDER – confirm
