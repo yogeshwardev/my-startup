@@ -1,0 +1,11 @@
+{
+  "name": "benzo-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static marketing website for Benzo.",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node serve.mjs"
+  }
+}
