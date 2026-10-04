@@ -277,6 +277,7 @@ This Privacy Policy explains how Benzo (“we”, “us”) collects, uses and p
 ## Information we collect
 
 - **Information you give us.** When you submit an enquiry form, message us or call us, we receive details such as your name, business name, phone number, email address, the service you are interested in, your budget range and the description you write.
+- **Enquiry records.** When you submit the enquiry form, your details are passed to the service we use to receive form submissions and are stored in our enquiry records so that we can follow up.
 - **Technical information.** Like most websites, our servers and tools may record basic technical data such as your browser type, device, pages visited and approximate region. We use it to keep the site secure and understand how it is used.
 
 ## How we use it

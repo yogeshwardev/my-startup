@@ -170,8 +170,10 @@
       if (endpoint) {
         var label = btn.textContent;
         btn.disabled = true; btn.textContent = 'Sending…';
-        fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
-          .then(function (r) { if (!r.ok) throw new Error('bad status'); form.reset(); show(form, 'form__status--ok', '<strong>Thank you — your enquiry has been sent.</strong>We will get back to you shortly. If it is urgent, message us on WhatsApp.'); })
+        // Google Apps Script web apps cannot answer cross-site JSON requests, so post plain text and treat a sent request as success.
+        var gas = endpoint.indexOf('script.google.com') !== -1;
+        fetch(endpoint, gas ? { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) } : { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
+          .then(function (r) { if (!gas && !r.ok) throw new Error('bad status'); form.reset(); show(form, 'form__status--ok', '<strong>Thank you — your enquiry has been sent.</strong>We will get back to you shortly. If it is urgent, message us on WhatsApp.'); })
           .catch(function () { show(form, 'form__status--err', '<strong>We could not send that just now.</strong>Please send it another way — nothing you typed has been lost.<div class="btn-row"><a class="btn btn--primary" href="' + wa + '" target="_blank" rel="noopener">Send on WhatsApp</a><a class="btn btn--secondary" href="' + mail + '">Send by email</a></div>'); })
           .then(function () { btn.disabled = false; btn.textContent = label; });
       } else {

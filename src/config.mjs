@@ -24,7 +24,7 @@ export const site = {
   // Add real client quotes here (with permission) and a testimonials section appears automatically.
   // Shape: { quote: '…', name: '…', role: '…', company: '…' }
   testimonials: [],
-  lastUpdated: '2026-10-10'
+  lastUpdated: '2026-10-11'
 };
 
 export const placeholders = () => {
